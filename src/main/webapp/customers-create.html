@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta name="keyword" content="" />
+    <meta name="author" content="WRAPCODERS" />
+    <title>DevSync</title>
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/d.png" />
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="assets/vendors/css/vendors.min.css" />
+    <link rel="stylesheet" type="text/css" href="assets/vendors/css/daterangepicker.min.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/theme.min.css" />
+    <!--[if lt IE 9]>
+    <script src="https:oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https:oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<nav class="nxl-navigation">
+    <div class="navbar-wrapper">
+        <div class="m-header">
+            <a href="index.html" class="b-brand">
+                <!-- ========   change your logo hear   ============ -->
+                <img src="assets/images/Devsync%20(2).png" alt="" class="logo logo-lg" width="210px;"/>
+                <img src="assets/images/d.png" alt="" class="logo logo-sm" style="margin-left: -35px; width: 120px;" />
+            </a>
+        </div>
+        <div class="navbar-content">
+            <ul class="nxl-navbar">
+                <li class="nxl-item nxl-caption">
+                    <label>Navigation</label>
+                </li>
+                <li class="nxl-item nxl-hasmenu">
+                    <a href="javascript:void(0);" class="nxl-link">
+                        <span class="nxl-micon"><i class="feather-life-buoy"></i></span>
+                        <span class="nxl-mtext">Help Center</span><span class="nxl-arrow"><i class="feather-chevron-right"></i></span>
+                    </a>
+                    <ul class="nxl-submenu">
+                        <li class="nxl-item"><a class="nxl-link" href="">Support</a></li>
+                        <li class="nxl-item"><a class="nxl-link" href="">KnowledgeBase</a></li>
+                        <li class="nxl-item"><a class="nxl-link" href="">Documentations</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<header class="nxl-header">
+    <div class="header-wrapper">
+        <!--! [Start] Header Left !-->
+        <div class="header-left d-flex align-items-center gap-4">
+            <a href="javascript:void(0);" class="nxl-head-mobile-toggler" id="mobile-collapse">
+                <div class="hamburger hamburger--arrowturn">
+                    <div class="hamburger-box">
+                        <div class="hamburger-inner"></div>
+                    </div>
+                </div>
+            </a>
+            <div class="nxl-navigation-toggle">
+                <a href="javascript:void(0);" id="menu-mini-button">
+                    <i class="feather-align-left"></i>
+                </a>
+                <a href="javascript:void(0);" id="menu-expend-button" style="display: none">
+                    <i class="feather-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+        <div class="header-right ms-auto">
+            <div class="d-flex align-items-center">
+                <div class="nxl-h-item dark-light-theme">
+                    <a href="javascript:void(0);" class="nxl-head-link me-0 dark-button">
+                        <i class="feather-moon"></i>
+                    </a>
+                    <a href="javascript:void(0);" class="nxl-head-link me-0 light-button" style="display: none">
+                        <i class="feather-sun"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <main class="nxl-container">
+        <div class="nxl-content">
+
+            <div class="main-content">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card border-top-0">
+                            <div class="tab-content">
+                                <div class="tab-pane fade show active" id="profileTab" role="tabpanel">
+                                    <div class="card-body personal-info">
+                                        <div class="mb-4 d-flex align-items-center justify-content-between">
+                                            <h5 class="fw-bold mb-0 me-4">
+                                                <span class="d-block mb-2">Personal Information:</span>
+                                                <span class="fs-12 fw-normal text-muted text-truncate-1-line">Following information is publicly displayed, be careful! </span>
+                                            </h5>
+                                            <a href="javascript:void(0);" class="btn btn-sm btn-light-brand">Add New</a>
+                                        </div>
+                                        <div class="row mb-4 align-items-center">
+                                            <div class="col-lg-4">
+                                                <label for="fullnameInput" class="fw-semibold">Name: </label>
+                                            </div>
+                                            <div class="col-lg-8">
+                                                <div class="input-group">
+                                                    <div class="input-group-text"><i class="feather-user"></i></div>
+                                                    <input type="text" class="form-control" id="fullnameInput" placeholder="Name">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-4 align-items-center">
+                                            <div class="col-lg-4">
+                                                <label for="mailInput" class="fw-semibold">Email: </label>
+                                            </div>
+                                            <div class="col-lg-8">
+                                                <div class="input-group">
+                                                    <div class="input-group-text"><i class="feather-mail"></i></div>
+                                                    <input type="text" class="form-control" id="mailInput" placeholder="Email">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-4 align-items-center">
+                                            <div class="col-lg-4">
+                                                <label for="usernameInput" class="fw-semibold">Username: </label>
+                                            </div>
+                                            <div class="col-lg-8">
+                                                <div class="input-group">
+                                                    <div class="input-group-text"><i class="feather-link-2"></i></div>
+                                                    <div class="input-group-text">https://www.wrapcoders.com/</div>
+                                                    <input type="url" class="form-control" id="usernameInput" placeholder="Username">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-4 align-items-center">
+                                            <div class="col-lg-4">
+                                                <label class="fw-semibold">Status: </label>
+                                            </div>
+                                            <div class="col-lg-8">
+                                                <select class="form-control" data-select2-selector="status">
+                                                    <option value="success" data-bg="bg-success" selected>Active</option>
+                                                    <option value="warning" data-bg="bg-warning">Inactive</option>
+                                                    <option value="danger" data-bg="bg-danger">Declined</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <hr class="my-0">
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- [ Main Content ] end -->
+        </div>
+        <!-- [ Footer ] start -->
+        <footer class="footer">
+            <p class="fs-11 text-muted fw-medium text-uppercase mb-0 copyright">
+                <span>Copyright ©</span>
+                <script>
+                    document.write(new Date().getFullYear());
+                </script>
+            </p>
+            <div class="d-flex align-items-center gap-4">
+                <a href="javascript:void(0);" class="fs-11 fw-semibold text-uppercase">Help</a>
+                <a href="javascript:void(0);" class="fs-11 fw-semibold text-uppercase">Terms</a>
+                <a href="javascript:void(0);" class="fs-11 fw-semibold text-uppercase">Privacy</a>
+            </div>
+        </footer>
+        <!-- [ Footer ] end -->
+    </main>
+
+
+    <!--! BEGIN: Vendors JS !-->
+    <script src="assets/vendors/js/vendors.min.js"></script>
+    <!-- vendors.min.js {always must need to be top} -->
+    <script src="assets/vendors/js/select2.min.js"></script>
+    <script src="assets/vendors/js/select2-active.min.js"></script>
+    <script src="assets/vendors/js/datepicker.min.js"></script>
+    <script src="assets/vendors/js/lslstrength.min.js"></script>
+    <!--! END: Vendors JS !-->
+    <!--! BEGIN: Apps Init  !-->
+    <script src="assets/js/common-init.min.js"></script>
+    <script src="assets/js/customers-create-init.min.js"></script>
+    <!--! END: Apps Init !-->
+    <!--! BEGIN: Theme Customizer  !-->
+    <script src="assets/js/theme-customizer-init.min.js"></script>
+    <!--! END: Theme Customizer !-->
+</body>
+
+
+<!-- Mirrored from wphtml.com/html/tf/duralux-demo/customers-create.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 02 Oct 2024 16:15:03 GMT -->
+</html>
