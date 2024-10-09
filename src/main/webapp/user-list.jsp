@@ -80,7 +80,7 @@
                     <td>
                       <div class="d-flex align-items-center gap-3">
                         <div class="avatar-image">
-                          <img src="assets/images/avatar/2.png" alt="" class="img-fluid" />
+                          <img src="assets/images/avatar/user-avatar.png" alt="" class="img-fluid" />
                         </div>
                         <a href="javascript:void(0);">
                           <span class="d-block"><%= user.getUsername() %></span>
@@ -100,7 +100,12 @@
                       </a>
                       <div class="dropdown-menu dropdown-menu-end">
                         <a href="users?action=edit&id=<%= user.getId() %>" class="dropdown-item"><i class="feather-at-sign"></i>Edit</a>
-                        <a href="users?action=delete&id=<%= user.getId() %>" class="dropdown-item"><i class="feather-trash-2"></i>Delete</a>
+                          <form action="users" method="POST" style="display: inline;">
+                              <input type="hidden" name="action" value="delete">
+                              <input type="hidden" name="id" value="<%= user.getId() %>">
+                              <button type="submit" class="dropdown-item"><i class="feather-trash-2"></i>Delete</button>
+                          </form>
+
 
                       </div>
                     </td>

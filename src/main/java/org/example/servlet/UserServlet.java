@@ -35,6 +35,15 @@ public class UserServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String action = req.getParameter("action");
+
+        if ("delete".equals(action)) {
+            Long userId = Long.parseLong(req.getParameter("id"));
+            userService.deleteUser(userId);
+            resp.sendRedirect("users?action=list");
+            return;
+        }
+
         String id = req.getParameter("id");
         String username = req.getParameter("username");
         String password = req.getParameter("password");
@@ -61,10 +70,5 @@ public class UserServlet extends HttpServlet {
         resp.sendRedirect("users?action=list");
     }
 
-    @Override
-    protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        Long userId = Long.parseLong(req.getParameter("id"));
-        userService.deleteUser(userId);
-        resp.sendRedirect("users?action=list");
-    }
+
 }
