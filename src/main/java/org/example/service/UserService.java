@@ -2,6 +2,7 @@ package org.example.service;
 
 import org.example.entity.User;
 import org.example.repository.UserRepository;
+import org.mindrot.jbcrypt.BCrypt;
 
 import java.util.List;
 
@@ -18,6 +19,8 @@ public class UserService {
     }
 
     public void createUser(User user) {
+        String hashedPassword = BCrypt.hashpw(user.getPassword(), BCrypt.gensalt());
+        user.setPassword(hashedPassword);
         repository.save(user);
     }
 
@@ -28,4 +31,8 @@ public class UserService {
     public void deleteUser(Long id) {
         repository.delete(id);
     }
+    public boolean checkPassword(String plainPassword, String hashedPassword) {
+        return BCrypt.checkpw(plainPassword, hashedPassword);
+    }
+
 }
