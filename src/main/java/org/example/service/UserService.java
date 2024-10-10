@@ -9,7 +9,9 @@ import java.util.List;
 public class UserService {
 
     private UserRepository repository = new UserRepository();
-
+    public User findUserByEmail(String email) {
+        return repository.findUserByEmail(email);
+    }
     public User getUser(Long id) {
         return repository.findById(id);
     }
