@@ -2,6 +2,7 @@ package org.example.repository;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
+import jakarta.persistence.NoResultException;
 import jakarta.persistence.TypedQuery;
 import org.example.entity.User;
 import org.example.util.JPAUtil;
@@ -10,6 +11,17 @@ import java.util.List;
 
 public class UserRepository {
 
+    public User findUserByEmail(String email) {
+        EntityManager em = JPAUtil.getEntityManager();
+        try{
+        TypedQuery<User> query = em.createQuery("SELECT u FROM User u WHERE u.email = :email", User.class);
+        query.setParameter("email", email);
+        return query.getSingleResult();}
+        catch(Exception e){
+            e.printStackTrace();
+            return null;
+        }
+    }
     public User findById(Long id) {
         EntityManager em = JPAUtil.getEntityManager();
         return em.find(User.class, id);
