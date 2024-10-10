@@ -20,6 +20,14 @@
   <script src="https:oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 </head>
+<%
+  User loggedUser = (User) session.getAttribute("user");
+  if (loggedUser == null) {
+    response.sendRedirect("login.jsp");
+    return;
+  }
+%>
+
 <body>
 <%@include file="pages/header.jsp"%>
 
@@ -30,7 +38,8 @@
       <div class="row">
         <div class="col-lg-12">
             <div class="tab-content">
-              <h1 style="margin: 2px">Welcome to DevSync</h1>
+              <h1 style="margin: 2px">Welcome <%= loggedUser.getUsername() %> to DevSync</h1>
+
               <h2 style="margin: 2px">Task Management Platform</h2>
               <div class="navigation">
                 <ul>

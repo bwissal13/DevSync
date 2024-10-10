@@ -1,3 +1,4 @@
+<%@ page import="org.example.entity.User" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="zxx">
 <head>
@@ -18,6 +19,13 @@
     <script src="https:oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
+<%
+    User loggedUser = (User) session.getAttribute("user");
+    if (loggedUser == null) {
+        response.sendRedirect("login.jsp");
+        return;
+    }
+%>
 <body>
 <%@include file="pages/header.jsp" %>
 
@@ -105,7 +113,9 @@
                                             <label for="managerInput" class="fw-semibold">Manager: </label>
                                         </div>
                                         <div class="col-lg-8">
-                                            <input type="checkbox" id="managerInput" name="manager" ${user != null && user.manager ? 'checked' : ''}>
+                                            <input type="hidden" name="manager" value="false">
+                                            <input type="checkbox" id="managerInput" name="manager" value="true"
+                                            ${user != null && user.isManager() ? 'checked' : ''}>
                                         </div>
                                     </div>
                                 </form>
