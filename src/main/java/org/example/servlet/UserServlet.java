@@ -18,6 +18,12 @@ public class UserServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        User loggedUser = (User) req.getSession().getAttribute("user");
+        if (loggedUser == null) {
+            resp.sendRedirect("login.jsp");
+            return;
+        }
+
         String action = req.getParameter("action");
         if ("list".equals(action)) {
             List<User> users = userService.getAllUsers();
@@ -35,6 +41,12 @@ public class UserServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        User loggedUser = (User) req.getSession().getAttribute("user");
+        if (loggedUser == null) {
+            resp.sendRedirect("login.jsp");
+            return;
+        }
+
         String action = req.getParameter("action");
 
         if ("delete".equals(action)) {
@@ -50,8 +62,9 @@ public class UserServlet extends HttpServlet {
         String firstName = req.getParameter("firstName");
         String lastName = req.getParameter("lastName");
         String email = req.getParameter("email");
-        boolean isManager = Boolean.parseBoolean(req.getParameter("manager"));
 
+
+        boolean isManager = req.getParameter("manager") != null && req.getParameter("manager").equals("true");
         User user = new User();
         user.setUsername(username);
         user.setPassword(password);
@@ -69,6 +82,4 @@ public class UserServlet extends HttpServlet {
 
         resp.sendRedirect("users?action=list");
     }
-
-
 }
